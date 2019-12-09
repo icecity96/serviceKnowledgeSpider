@@ -60,8 +60,8 @@ def _spider(url):
 
 
 if __name__ == '__main__':
-    config = "/home/ubuntu/Project/CornJobs/serviceknowledgespider/pedaily.cfg"
-    data_file = "/home/ubuntu/Project/CornJobs/serviceknowledgespider/data/pedaily_enterprise.entities"
+    config = "/home/lmy/Project/CornJobs/serviceknowledgespider/pedaily.cfg"
+    data_file = "/home/lmy/Project/CornJobs/serviceknowledgespider/data/pedaily_enterprise.entities"
     for number in range(30):
         page_number = open(config, 'r').readlines()[0].strip()
         page_number = int(page_number)
