@@ -71,6 +71,7 @@ if __name__ == '__main__':
             page_number += 1
             with open(config, 'w') as w:
                 w.write('{:d}\n'.format(page_number))
+            continue
         page_number += 1
         with open(config, 'w') as w:
             w.write('{:d}\n'.format(page_number))
