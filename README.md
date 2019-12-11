@@ -24,18 +24,18 @@ You are welcome to send a pull request or open an issue.
 
     | column | explanation | example |
     | --- | -------------- | ------- |
-| fn | app full name | 中国移动 |
-| dev | developer | 中国移动通信有限公司 |
-| url | url | http://app.mi.com/details?id=com.greenpoint.android.mc10086.activity |
-| ca | app category | 实用工具 |
-| sp | support platform | 手机 |
-| avs | app average score | 3 |
-| cn | comment number | 7519 |
-| size | app size | 34.32 M |
-| v | app version | 5.8.2 |
-| ut | update time | 2019-11-30|
-| pn | package name | com.greenpoint.android.mc10086.activity |
-| id | app ID | 51733 |
-| pm | app permissions | 蓝牙管理-录音-...|
-| intro | app introduction | .... |
-| new | what's new | ... |
+    | fn | app full name | 中国移动 |
+    | dev | developer | 中国移动通信有限公司 |
+    | url | url | http://app.mi.com/details?id=com.greenpoint.android.mc10086.activity |
+    | ca | app category | 实用工具 |
+    | sp | support platform | 手机 |
+    | avs | app average score | 3 |
+    | cn | comment number | 7519 |
+    | size | app size | 34.32 M |
+    | v | app version | 5.8.2 |
+    | ut | update time | 2019-11-30|
+    | pn | package name | com.greenpoint.android.mc10086.activity |
+    | id | app ID | 51733 |
+    | pm | app permissions | 蓝牙管理-录音-...|
+    | intro | app introduction | .... |
+    | new | what's new | ... |
