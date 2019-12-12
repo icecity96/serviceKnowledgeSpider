@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import random
 
 class appInfo(object):
 
@@ -120,7 +121,8 @@ def spider(url):
 if __name__ == '__main__':
     categorys = [5, 27, 2, 7, 12, 10, 9, 4, 3, 6, 14, 8, 11, 13, 1, 15]
     data_file = "/home/lmy/Project/CornJobs/serviceknowledgespider/data/mi_appstore.entities"
-    for i in range(2):
+    n = random.randint(1, 5)
+    for i in range(n):
         lines = open('/home/lmy/Project/CornJobs/serviceknowledgespider/mi_appstore.cfg', 'r').readlines()
         lines = [int(line.strip()) for line in lines]
         if lines[0] >= len(categorys):
