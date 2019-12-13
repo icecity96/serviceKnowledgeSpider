@@ -6,6 +6,10 @@ This project is used to collect service-related entities information to build a 
 ## Contribute
 You are welcome to send a pull request or open an issue.
 
+There are some problems need to be solved manually (maybe you can find an algorithm):
+
+[-] In 100ec_enterprise, entities should be classified into Organization and channel. 
+
 ## Resources List
 * **pedaily_enterprise**: https://zdb.pedaily.cn/enterprise
     
@@ -39,3 +43,13 @@ You are welcome to send a pull request or open an issue.
     | pm | app permissions | 蓝牙管理-录音-...|
     | intro | app introduction | .... |
     | new | what's new | ... |
+    
+* **100ec_enterprise**: http://www.100ec.cn/zt/qyk/
+
+    | column | explanation | example |
+    | ------ | ----------- | ------- |
+    | Name | organization/channel name | 51信用卡管家 |
+    | Category | domain name | 互联网金融 |
+    | Subcategory | sub-domain name | 消费信贷 |
+    | URL | Link to related news | ... |
+  

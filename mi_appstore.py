@@ -30,10 +30,22 @@ class appInfo(object):
         return s
 
 def spider(url):
+
     headers = {
         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
         'Upgrade-Insecure-Requests': '1'
     }
+    proxies = [
+        {"http": "http://195.211.30.115:36359"},
+        {"http": "http://61.19.154.12:8080"},
+        {"http": "http://118.25.10.61:808"},
+        {"http": "http://183.88.241.133:8080"},
+        {"http": "http://47.88.225.123:8080"},
+        {"http": "http://110.74.195.215:44975"},
+        {"http": "http://14.171.203.104:8080"},
+        {"http": "http://5.189.144.84:3128"}
+    ]
+    proxies_index = random.randint(0, len(proxies))
     response = requests.get(url, headers=headers)
     if response.status_code != 200: # this means that this category has spider over
         return False, None
@@ -49,6 +61,7 @@ def spider(url):
         app_info.pn = packageName
         app_info.id = app["appId"]
         app_info.url = "http://app.mi.com/details?id={}".format(packageName)
+        proxies_index = random.randint(0, len(proxies))
         response = requests.get(app_info.url, headers=headers)
         soup = BeautifulSoup(response.text, 'lxml')
         intro_titles = soup.find('div', class_='intro-titles')
@@ -122,7 +135,7 @@ if __name__ == '__main__':
     categorys = [5, 27, 2, 7, 12, 10, 9, 4, 3, 6, 14, 8, 11, 13, 1, 15]
     data_file = "/home/lmy/Project/CornJobs/serviceknowledgespider/data/mi_appstore.entities"
     n = random.randint(1, 5)
-    for i in range(n):
+    for i in range(2):
         lines = open('/home/lmy/Project/CornJobs/serviceknowledgespider/mi_appstore.cfg', 'r').readlines()
         lines = [int(line.strip()) for line in lines]
         if lines[0] >= len(categorys):
