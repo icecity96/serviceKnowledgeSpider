@@ -52,4 +52,80 @@ There are some problems need to be solved manually (maybe you can find an algori
     | Category | domain name | 互联网金融 |
     | Subcategory | sub-domain name | 消费信贷 |
     | URL | Link to related news | ... |
-  
+    
+* **itjuzi_deathcompany**: https://www.itjuzi.com/deathCompany
+    
+```json
+{
+  "com_id": 33468277, 
+  "com_logo_archive": "44a2660ae9b2bb643b54b03a707f103f.png", 
+  "com_name": "淘集集", 
+  "com_change_close_date": "2019-12-09", 
+  "com_born_year": 2017, 
+  "com_born_month": 5, 
+  "total_money": 27300, 
+  "com_des": "淘集集是一个拼团社交电商平台，涵盖服饰鞋配、母婴、家纺、数码、食品等生活用品，用户邀请亲友参与拼团，满足人数要求后可享受低价购买的权利，同时可参加VIP会员，无需拼团即可享受低价。是一款基于补充线下零售门店销售场景的购物类APP，可以让会员不在门店的时候可以在线进行商品的购买，指引会员到店进行商品的体验，于2018年8月上线。", 
+  "cat_name": "电子商务", 
+  "se_cat_name": "生鲜食品", 
+  "com_prov": "上海", 
+  "com_fund_status_name": "A轮",
+  "live_time": 952, 
+  "born": "2017-05-01",
+  "logo": "https://cdn.itjuzi.com/images/44a2660ae9b2bb643b54b03a707f103f.png?imageView2/0/q/100", 
+  "live_date": [2, 7, 8], 
+  "com_team": [
+      {
+        "id": 31580, 
+        "name": "张正平", 
+        "per_des": "张正平，淘集集CEO。连续创业者，曾在宝尊电商任职，任旗下品牌尾货特卖平台“卖客疯”CEO，闪电降价的前身，是宝尊电商旗下的电商平台“卖客疯”。", 
+        "logo": "https://cdn.itjuzi.com/assets/front/images/img/icon-person.png", 
+        "des": "CEO", 
+        "per_state": 0}, 
+      {
+        "id": 114787, 
+        "name": "苟晓辰", 
+        "per_des": "苟晓辰，淘集集CTO。", 
+        "logo": "https://cdn.itjuzi.com/assets/front/images/img/icon-person.png", 
+        "des": "CTO", 
+        "per_state": 0}], 
+  "com_tag": [
+      {
+        "tag_id": 337, 
+        "tag_name": "社交电商"}, 
+      {
+        "tag_id": 402,
+        "tag_name": "B2B"}, 
+      {
+        "tag_id": 756, 
+        "tag_name": "电子商务"}, 
+      {
+        "tag_id": 758, 
+        "tag_name": "生鲜食品"}, 
+      {
+        "tag_id": 9083, 
+        "tag_name": "拼团 "}], 
+  "com_invst": [
+      {
+        "invst_id": 160, 
+        "invst_name": "DST"}, 
+      {
+        "invst_id": 198, 
+        "invst_name": "Tiger老虎基金(中国)"}, 
+      {
+        "invst_id": 6788, 
+        "invst_name": "险峰旗云"}], 
+  "closure_type": [
+      {
+        "id": 7, 
+        "name": "团队能力不足", 
+        "p_id": 22}, 
+      {
+        "id": 11, 
+        "name": "烧钱", 
+        "p_id": 24}, 
+      {
+        "id": 12, 
+        "name": "现金流断裂", 
+        "p_id": 24}]
+}
+```

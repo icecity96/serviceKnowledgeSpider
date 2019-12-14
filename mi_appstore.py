@@ -29,24 +29,13 @@ class appInfo(object):
         )
         return s
 
-def spider(url):
+def spider(url, proxies):
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.169 Safari/537.36',
         'Upgrade-Insecure-Requests': '1'
     }
-    proxies = [
-        {"http": "http://195.211.30.115:36359"},
-        {"http": "http://61.19.154.12:8080"},
-        {"http": "http://118.25.10.61:808"},
-        {"http": "http://183.88.241.133:8080"},
-        {"http": "http://47.88.225.123:8080"},
-        {"http": "http://110.74.195.215:44975"},
-        {"http": "http://14.171.203.104:8080"},
-        {"http": "http://5.189.144.84:3128"}
-    ]
-    proxies_index = random.randint(0, len(proxies))
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, headers=headers, proxies=proxies)
     if response.status_code != 200: # this means that this category has spider over
         return False, None
     app_list = ""
@@ -61,8 +50,7 @@ def spider(url):
         app_info.pn = packageName
         app_info.id = app["appId"]
         app_info.url = "http://app.mi.com/details?id={}".format(packageName)
-        proxies_index = random.randint(0, len(proxies))
-        response = requests.get(app_info.url, headers=headers)
+        response = requests.get(app_info.url, headers=headers, proxies=proxies)
         soup = BeautifulSoup(response.text, 'lxml')
         intro_titles = soup.find('div', class_='intro-titles')
         try:
@@ -134,15 +122,20 @@ def spider(url):
 if __name__ == '__main__':
     categorys = [5, 27, 2, 7, 12, 10, 9, 4, 3, 6, 14, 8, 11, 13, 1, 15]
     data_file = "/home/lmy/Project/CornJobs/serviceknowledgespider/data/mi_appstore.entities"
-    n = random.randint(1, 5)
-    for i in range(2):
+    proxies = requests.get("http://192.168.1.118:18899/api/v1/proxies").json()
+    proxies = proxies["proxies"]
+    random.shuffle(proxies)
+    for i in range(5):
+        proxies_in = proxies[i % len(proxies)]
+        http_s ="https" if proxies_in["is_https"] else "http"
+        proxies_in = { http_s: "{}://{}:{:d}".format(http_s, proxies_in["ip"], proxies_in["port"])}
         lines = open('/home/lmy/Project/CornJobs/serviceknowledgespider/mi_appstore.cfg', 'r').readlines()
         lines = [int(line.strip()) for line in lines]
         if lines[0] >= len(categorys):
             exit(-1)
         page, cid = lines[1], categorys[lines[0]]
         url = 'http://app.mi.com/categotyAllListApi?page={:d}&categoryId={:d}&pageSize=30'.format(page, cid)
-        ok, res = spider(url)
+        ok, res = spider(url, proxies_in)
         with open('/home/lmy/Project/CornJobs/serviceknowledgespider/mi_appstore.cfg', 'w') as w:
             if len(res) > 0:
                 w.write("{:d}\n".format(lines[0]))
